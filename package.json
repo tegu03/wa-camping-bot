@@ -1,1 +1,9 @@
+{
+  "name": "wa-camping-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@adiwajshing/baileys": "^6.5.0"
+  }
+}
 
