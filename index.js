@@ -1,8 +1,6 @@
 const { default: makeWASocket, useSingleFileAuthState } = require('@adiwajshing/baileys')
 const fs = require('fs')
-const { Boom } = require('@hapi/boom')
 const catalog = require('./data/catalog.json')
-
 const { state, saveState } = useSingleFileAuthState('./auth_info.json')
 
 async function startBot() {
@@ -39,9 +37,7 @@ Ketik salah satu angka:
 - Matras: ${catalog.matras}
 - Sleeping Bag: ${catalog.sleeping_bag}
 - Kompor Portable: ${catalog.kompor}
-- Nesting Set: ${catalog.nesting}
-
-Ketik *2* untuk daftar lengkap`
+- Nesting Set: ${catalog.nesting}`
       })
     } else if (text === '2') {
       await sock.sendMessage(sender, {
@@ -62,7 +58,7 @@ Ketik angka untuk lihat detail (Contoh: 1)`
 3. Ambil sendiri / dikirim
 4. Deposit (jika ada) dikembalikan setelah alat dikembalikan
 
-Ketik *sewa sekarang* untuk mulai isi form`
+Ketik *sewa sekarang* untuk isi form`
       })
     } else if (text.includes('sewa sekarang')) {
       await sock.sendMessage(sender, {
@@ -91,4 +87,3 @@ Admin akan segera menghubungi kamu untuk konfirmasi. 🌄`
 }
 
 startBot()
-
